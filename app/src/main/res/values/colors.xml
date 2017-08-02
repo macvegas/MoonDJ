@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#3F51B5</color>
+
     <color name="colorPrimaryDark">#303F9F</color>
+
     <color name="colorAccent">#FF4081</color>
+
+    <color name="PurpleBasic">#6b0096</color>
+
+    <color name="verylightpurple">#f2d3ff</color>
+
+    <color name="topbuttonblue">#a500ff</color>
+
+    <color name="botbuttonblue">#d67fff</color>
 </resources>
