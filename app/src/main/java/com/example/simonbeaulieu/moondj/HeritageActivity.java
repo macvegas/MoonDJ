@@ -17,4 +17,8 @@ public class HeritageActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
+
+    public static void echo(Object o){
+        System.out.println(o);
+    }
 }

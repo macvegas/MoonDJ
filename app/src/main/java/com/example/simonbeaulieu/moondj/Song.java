@@ -7,6 +7,7 @@ import java.io.Serializable;
  */
 public class Song implements Serializable {
 
+    private int id;
     private String path;
     private String title;
     private String artist;
@@ -23,6 +24,22 @@ public class Song implements Serializable {
         this.path = path;
         this.title = title;
         this.artist = artist;
+    }
+
+    //constructeur vide
+    public Song(){
+        this.path = "";
+        this.title = "";
+        this.artist = "";
+        this.notation= "";
+    }
+
+    public Song(int id,String path, String title, String artist,String notation){
+        this.id=id;
+        this.path = path;
+        this.title = title;
+        this.artist = artist;
+        this.notation=notation;
     }
 
     public String getTitle() {
@@ -57,5 +74,12 @@ public class Song implements Serializable {
         this.path = path;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }
 
