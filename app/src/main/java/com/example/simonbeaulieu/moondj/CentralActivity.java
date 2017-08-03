@@ -18,8 +18,8 @@ public class CentralActivity extends HeritageActivity {
         setContentView(R.layout.activity_central);
 
 
-        for(Song i: songArrayList){
-            echo(i.getTitle());
-        }
+//        for(Song i: songArrayList){
+//            echo(i.getTitle() + " || "+i.getArtist());
+//        }
     }
 }

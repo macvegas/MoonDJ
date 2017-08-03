@@ -8,6 +8,8 @@ import android.util.Log;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -69,24 +71,45 @@ public class HeritageActivity extends AppCompatActivity{
             Song song = new Song();
             song.setPath(i.getPath());
             song.setNotation("0.0");
-
-            Pattern p = Pattern.compile("(.*) - (.*)\\.mp3");
+            //parsing du titre/artiste
+            String songtitle ="";
+            Pattern p = Pattern.compile("^([^-]*) - (.*)");
             Matcher m = p.matcher(i.getName());
+            //recherche du cas "ARTISTE - TITRE"
             if(m.find()){
-                song.setTitle(m.group(2));
+                songtitle=m.group(2);
                 song.setArtist(m.group(1));
+
             }
             else{
-                song.setTitle(i.getName());
+                //sinon, on remet tout le titre
+                songtitle=(i.getName());
                 song.setArtist("unknown");
             }
+            //on recherche les trucs entre parenthèses/crochets et on vire
             p=Pattern.compile("([\\[(].*[])])");
-            m=p.matcher(song.getTitle());
+            m=p.matcher(songtitle);
             if (m.find()){
-                song.setTitle(song.getTitle().replace(m.group(1),""));
+                songtitle=(songtitle.replace(m.group(1),""));
             }
+            // on vire les seconds tirets inutiles
+            p=Pattern.compile("(.*) - .*");
+            m=p.matcher(songtitle);
+            if(m.find()){
+                songtitle=m.group(1);
+            }
+            songtitle=songtitle.replace(".mp3","");
+            song.setTitle(songtitle);
             songlist.add(song);
         }
+
+        Collections.sort(songlist, new Comparator<Song>()
+        {
+            @Override
+            public int compare(Song song, Song t1) {
+                return song.getTitle().compareTo(t1.getTitle());
+            }
+        });
         return songlist;
     }
 
