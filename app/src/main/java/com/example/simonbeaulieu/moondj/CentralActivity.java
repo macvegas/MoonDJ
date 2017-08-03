@@ -2,9 +2,13 @@ package com.example.simonbeaulieu.moondj;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+
+import java.io.File;
+import java.util.List;
 
 public class CentralActivity extends HeritageActivity {
 
@@ -14,8 +18,8 @@ public class CentralActivity extends HeritageActivity {
         setContentView(R.layout.activity_central);
 
 
-
+        for(Song i: songArrayList){
+            echo(i.getTitle());
+        }
     }
-
-
 }
