@@ -60,4 +60,32 @@ public class DBHandler extends SQLiteOpenHelper {
 // return shop
         return song;
     }
+
+    public int updateSong(Song song) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(KEY_PATH,song.getPath());
+        values.put(KEY_TITRE,song.getTitle());
+        values.put(KEY_ARTISTE,song.getArtist());
+        values.put(KEY_NOTATION,song.getNotation());
+// updating row
+        return db.update(TABLE_MUSICS, values, KEY_TITRE + " = ?",
+                new String[]{song.getTitle()});
+    }
+
+    public void deleteSong(Song song) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TABLE_MUSICS, KEY_TITRE + " = ?",
+                new String[] { song.getTitle() });
+        db.close();
+    }
+
+    public int getSongCount() {
+        String countQuery = "SELECT * FROM " + TABLE_MUSICS;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(countQuery, null);
+        cursor.close();
+    // return count
+        return cursor.getCount();
+    }
 }
