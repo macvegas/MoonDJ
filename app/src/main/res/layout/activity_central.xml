@@ -7,6 +7,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <FrameLayout
+        android:id="@+id/fragmentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        ></LinearLayout>
+
+
+
+
 
     <ImageView android:layout_height="wrap_content"
         android:layout_width="wrap_content"
@@ -20,49 +35,6 @@
         android:src="@drawable/moondog"/>
 
 
-    <TextView android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:id="@+id/MenuDescription"
-        android:textAlignment="center"
-        style="@style/TitleStyle"
-        android:text="MoonMoon gère ta musique !"/>
 
-
-
-    <Button android:background="@drawable/grandient_button"
-        android:layout_height="wrap_content"
-        android:layout_width="150dp"
-        android:id="@+id/deefaultmodebutton"
-        android:text="default mode"
-        android:layout_alignParentLeft="true"
-        android:layout_margin="20dp"
-        android:layout_below="@id/MenuDescription"/>
-
-    <Button android:background="@drawable/grandient_button"
-        android:layout_height="wrap_content"
-        android:layout_width="150dp"
-        android:id="@+id/randommodebutton"
-        android:text="random mode"
-        android:layout_margin="20dp"
-        android:layout_below="@id/MenuDescription"
-        android:layout_alignParentRight="true"/>
-
-    <Button android:background="@drawable/grandient_button"
-        android:layout_height="wrap_content"
-        android:layout_width="150dp"
-        android:id="@+id/weightedmodebutton"
-        android:text="weighted mode"
-        android:layout_margin="20dp"
-        android:layout_below="@id/randommodebutton"
-        android:layout_alignParentRight="true"/>
-
-    <Button android:background="@drawable/grandient_button"
-        android:layout_height="wrap_content"
-        android:layout_width="150dp"
-        android:id="@+id/musicstashbutton"
-        android:text="music"
-        android:layout_alignParentLeft="true"
-        android:layout_margin="20dp"
-        android:layout_below="@id/deefaultmodebutton"/>
 
 </RelativeLayout>
