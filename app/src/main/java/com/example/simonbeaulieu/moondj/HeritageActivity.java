@@ -1,5 +1,7 @@
 package com.example.simonbeaulieu.moondj;
 
+import android.app.Activity;
+import android.app.FragmentTransaction;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -113,6 +115,11 @@ public class HeritageActivity extends AppCompatActivity{
         return songlist;
     }
 
+    public FragmentTransaction getFT(Activity a){
+        android.app.FragmentManager fragmentManager = a.getFragmentManager();
+        android.app.FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
+        return fragmentTransaction;
+    }
 
     public static void echo(Object o){
         System.out.println(o);

@@ -10,7 +10,7 @@ import android.view.ViewGroup;
  * Created by simon.beaulieu on 07/08/2017.
  */
 
-public class Frag_menuPrincipal extends Fragment {
+public class Frag_menuPrincipal extends MainFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

@@ -1,5 +1,6 @@
 package com.example.simonbeaulieu.moondj;
 
+import android.app.FragmentTransaction;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Environment;
@@ -16,11 +17,8 @@ public class CentralActivity extends HeritageActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_central);
-        android.app.FragmentManager fragmentManager = getFragmentManager();
-        android.app.FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
-        Frag_menuPrincipal fragMenuPrincipal = new Frag_menuPrincipal();
-        fragmentTransaction.replace(R.id.fragmentLayout,fragMenuPrincipal);
-        fragmentTransaction.commit();
+        FragmentTransaction ft=getFT(this);
+        MainFragment.instanciate(new Frag_menuPrincipal(),ft,true,false,R.id.fragmentLayout);
 
 //        for(Song i: songArrayList){
 //            echo(i.getTitle() + " || "+i.getArtist());
