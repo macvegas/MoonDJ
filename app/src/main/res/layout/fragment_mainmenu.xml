@@ -17,7 +17,8 @@
         android:text="default mode"
         android:layout_alignParentLeft="true"
         android:layout_margin="20dp"
-        android:layout_below="@id/MenuDescription"/>
+        android:layout_below="@id/MenuDescription"
+        android:textColor="#ffffff"/>
 
     <Button android:background="@drawable/grandient_button"
         android:layout_height="wrap_content"
@@ -26,7 +27,8 @@
         android:text="random mode"
         android:layout_margin="20dp"
         android:layout_below="@id/MenuDescription"
-        android:layout_alignParentRight="true"/>
+        android:layout_alignParentRight="true"
+        android:textColor="#ffffff"/>
 
     <Button android:background="@drawable/grandient_button"
         android:layout_height="wrap_content"
@@ -35,7 +37,8 @@
         android:text="weighted mode"
         android:layout_margin="20dp"
         android:layout_below="@id/randommodebutton"
-        android:layout_alignParentRight="true"/>
+        android:layout_alignParentRight="true"
+        android:textColor="#ffffff"/>
 
     <Button android:background="@drawable/grandient_button"
         android:layout_height="wrap_content"
@@ -44,5 +47,6 @@
         android:text="music"
         android:layout_alignParentLeft="true"
         android:layout_margin="20dp"
-        android:layout_below="@id/deefaultmodebutton"/>
+        android:layout_below="@id/deefaultmodebutton"
+        android:textColor="#ffffff"/>
 </RelativeLayout>

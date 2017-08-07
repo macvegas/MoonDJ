@@ -26,7 +26,7 @@
             android:id="@+id/previousButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/previous"
+            android:src="@drawable/previous1"
             android:background="@null"
             />
 
@@ -34,7 +34,7 @@
             android:id="@+id/playpauseButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/play"
+            android:src="@drawable/play1"
             android:background="@null"
             />
 
@@ -42,7 +42,7 @@
             android:id="@+id/nextButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/next"
+            android:src="@drawable/next1"
             android:background="@null"
             />
     </LinearLayout>
