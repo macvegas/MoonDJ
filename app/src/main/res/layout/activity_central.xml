@@ -17,7 +17,35 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        ></LinearLayout>
+        android:id="@+id/music_bar"
+        android:background="@drawable/gradient_musicbar"
+        android:padding="7dp"
+        android:gravity="center"
+        >
+        <ImageButton
+            android:id="@+id/previousButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/previous"
+            android:background="@null"
+            />
+
+        <ImageButton
+            android:id="@+id/playpauseButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/play"
+            android:background="@null"
+            />
+
+        <ImageButton
+            android:id="@+id/nextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/next"
+            android:background="@null"
+            />
+    </LinearLayout>
 
 
 
@@ -28,11 +56,11 @@
         android:id="@+id/imageView2"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"
         android:maxHeight="100dp"
         android:adjustViewBounds="true"
         android:scaleType="fitCenter"
-        android:src="@drawable/moondog"/>
+        android:src="@drawable/moondog"
+        android:layout_above="@id/music_bar"/>
 
 
 
