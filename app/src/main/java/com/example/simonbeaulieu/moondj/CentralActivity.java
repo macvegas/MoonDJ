@@ -1,18 +1,14 @@
 package com.example.simonbeaulieu.moondj;
 
 import android.app.FragmentTransaction;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.os.Environment;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
+import android.widget.ImageView;
 
-import java.io.File;
-import java.util.List;
+import com.bumptech.glide.Glide;
 
 public class CentralActivity extends HeritageActivity {
 
+    ImageView imageView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +17,8 @@ public class CentralActivity extends HeritageActivity {
         Frag_menuPrincipal fragMenuPrincipal = new Frag_menuPrincipal();
         MainFragment.instanciate(fragMenuPrincipal,ft,true,false,R.id.fragmentLayout);
 
+        imageView=(ImageView)findViewById(R.id.gif) ;
+        Glide.with(this).load(R.drawable.loading).into(imageView);
 //        for(Song i: songArrayList){
 //            echo(i.getTitle() + " || "+i.getArtist());
 //        }
