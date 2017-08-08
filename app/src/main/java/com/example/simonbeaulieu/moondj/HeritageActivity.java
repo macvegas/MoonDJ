@@ -54,13 +54,10 @@ public class HeritageActivity extends AppCompatActivity{
             dbHandler.onCreate(dbHandler.getWritableDatabase());
             Log.d("CentralActivity","recréation de la table");
         }
-        dbHandler.addSong(new Song("/path/interressant","Amazing","INNA","0.0"));
-        dbHandler.addSong(new Song("/path/coucou","Babar","polo","0.0"));
-//        dbHandler.deleteSong("Amazing");
-        int count= dbHandler.getSongCount();
-        echo("count = "+count);
-        Song song =dbHandler.getSong("Amazing");
-        echo("id is: "+song.getId());
+//        int count= dbHandler.getSongCount();
+//        echo("count = "+count);
+//        Song song =dbHandler.getSong("Amazing");
+//        echo("id is: "+song.getId());
 //        dbHandler.dropTableSong();
 
     }

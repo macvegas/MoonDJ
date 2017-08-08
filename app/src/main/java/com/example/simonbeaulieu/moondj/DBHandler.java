@@ -33,13 +33,13 @@ public class DBHandler extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        echo("COUCOU JE SUIS LA");
         try{
         String CREATE_TABLE = "CREATE TABLE " + TABLE_MUSICS + "("
         + KEY_ID +" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +KEY_PATH + " TEXT, " + KEY_TITRE + " TEXT,"
         + KEY_ARTISTE + " TEXT," + KEY_NOTATION + " TEXT " + ")";
         sqLiteDatabase.execSQL(CREATE_TABLE);
-        close();}
+//        close();
+        }
 
         catch (SQLiteException e){
             Log.e("DBHhandler's onCreate","Table Already Exists");
