@@ -12,15 +12,22 @@ public class MainFragment extends Fragment {
         FT.replace(View_id,fragment);
         if(toAddToStack)
             FT.addToBackStack(backstackMessage);
+        FT.replace(View_id,fragment);
         if(toCommit)
-            FT.replace(View_id,fragment);
+            FT.commit();
     }
+
     public static void instanciate(Fragment fragment, FragmentTransaction FT, boolean toCommit,boolean toAddToStack,int View_id){
         FT.replace(View_id,fragment);
-        if(toAddToStack)
+        if(toAddToStack){
             FT.addToBackStack("step added");
-        if(toCommit)
+        }
+        FT.replace(View_id,fragment);
+        if(toCommit){
             System.out.println("COUCOUZOBISOU");
-            FT.replace(View_id,fragment);
+            FT.commit();
+        }
+
+
     }
 }

@@ -18,7 +18,8 @@ public class CentralActivity extends HeritageActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_central);
         FragmentTransaction ft=getFT(this);
-        MainFragment.instanciate(new Frag_menuPrincipal(),ft,true,false,R.id.fragmentLayout);
+        Frag_menuPrincipal fragMenuPrincipal = new Frag_menuPrincipal();
+        MainFragment.instanciate(fragMenuPrincipal,ft,true,false,R.id.fragmentLayout);
 
 //        for(Song i: songArrayList){
 //            echo(i.getTitle() + " || "+i.getArtist());
