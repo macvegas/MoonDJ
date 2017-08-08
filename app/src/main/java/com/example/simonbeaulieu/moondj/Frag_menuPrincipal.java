@@ -1,5 +1,6 @@
 package com.example.simonbeaulieu.moondj;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -37,7 +38,9 @@ public class Frag_menuPrincipal extends MainFragment {
         music.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Frag_musicList musicList =new Frag_musicList();
+                getActivity().getFragmentManager().beginTransaction().replace(R.id.fragmentLayout,musicList).commit();
+                System.out.println("fragmentbutton clicked");
             }
         });
 
