@@ -8,7 +8,7 @@ import com.bumptech.glide.Glide;
 
 public class CentralActivity extends HeritageActivity {
 
-    ImageView imageView;
+    public static ImageView imageView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
