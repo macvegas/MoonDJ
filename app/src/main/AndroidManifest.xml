@@ -14,7 +14,7 @@
         android:allowBackup="true"
         android:icon="@drawable/logomoonmoon"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/wallaven_behind"
+        android:roundIcon="@drawable/logomoonmoon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".CentralActivity">
