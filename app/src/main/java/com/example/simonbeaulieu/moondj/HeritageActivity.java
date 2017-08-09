@@ -1,10 +1,15 @@
 package com.example.simonbeaulieu.moondj;
 
+import android.*;
+import android.Manifest;
 import android.app.Activity;
 import android.app.FragmentTransaction;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
@@ -22,15 +27,32 @@ import java.util.regex.Pattern;
 public class HeritageActivity extends AppCompatActivity{
     public static boolean isplaying =false;
     public static ArrayList<Song> songArrayList;
+    int checkPermission;
+    final int WRITE_EXTERNAL_STORAGE_REQUESTINT =100;
+    final int READ_EXTERNAL_STORAGE_REQUESTINT =101;
+    final int STORAGE_REQUESTINT =102;
+    final int PHONE_STATE_REQUESTINT=103;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         DBHandler dbHandler= new DBHandler(this);
+        //checkout des permissions
+        reqPermissions();
+        try {
+            Thread.sleep(10000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
+
+        //set up de la liste des musiques
+        echo("permissions granted and loading list");
         songArrayList=songloading();
         setDBup(dbHandler);
         dbHandler.close();
+
 
     }
 
@@ -116,6 +138,32 @@ public class HeritageActivity extends AppCompatActivity{
         android.app.FragmentManager fragmentManager = a.getFragmentManager();
         android.app.FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
         return fragmentTransaction;
+    }
+
+    public void reqPermissions(){
+        checkPermission= ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE );
+        if(checkPermission != PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.READ_EXTERNAL_STORAGE,Manifest.permission.READ_PHONE_STATE},120);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case 120: {
+                echo("ca passe");
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    echo("passé dans le true");
+
+                } else {
+                    echo("passé dans le false");
+                }
+                break;
+            }
+        }
     }
 
     public static void echo(Object o){
