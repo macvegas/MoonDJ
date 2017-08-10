@@ -134,7 +134,7 @@ public class HeritageActivity extends AppCompatActivity{
         return songlist;
     }
 
-    public FragmentTransaction getFT(Activity a){
+    public static FragmentTransaction getFT(Activity a){
         android.app.FragmentManager fragmentManager = a.getFragmentManager();
         android.app.FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
         return fragmentTransaction;

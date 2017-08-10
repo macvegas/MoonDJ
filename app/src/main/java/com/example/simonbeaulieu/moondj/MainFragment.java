@@ -24,10 +24,8 @@ public class MainFragment extends Fragment {
         }
         FT.replace(View_id,fragment);
         if(toCommit){
-            System.out.println("COUCOUZOBISOU");
             FT.commit();
         }
-
-
     }
+
 }

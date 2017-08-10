@@ -32,6 +32,16 @@ public class CentralActivity extends HeritageActivity {
         Glide.with(this).load(R.drawable.loading).into(imageView);
     }
 
+    @Override
+    public void onBackPressed() {
+        int usedfragmentCount=this.getFragmentManager().getBackStackEntryCount();
+        if (usedfragmentCount==0){
+            super.onBackPressed();
+        }else{
+            this.getFragmentManager().popBackStack();
+        }
+    }
+
     public Context getContext(){
         return this;
     }

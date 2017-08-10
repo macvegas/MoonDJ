@@ -15,7 +15,7 @@ import java.util.ArrayList;
  * Created by simon.beaulieu on 08/08/2017.
  */
 
-public class Frag_musicList extends Fragment{
+public class Frag_musicList extends MainFragment{
     ListView listView;
     ArrayList<Song> liste_musiques ;
     @Override
@@ -29,7 +29,7 @@ public class Frag_musicList extends Fragment{
         //displaying the list of musics
         Adapter_MusicList adapter = new Adapter_MusicList(getActivity().getApplicationContext(),liste_musiques);
         listView.setAdapter(adapter);
-        // TODO: 10/08/2017 arranger un onClick sur les items de la musicList 
+        // TODO: 10/08/2017 arranger un onClick sur les items de la musicList
 
         return view;
     }

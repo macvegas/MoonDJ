@@ -39,7 +39,7 @@ public class Frag_menuPrincipal extends MainFragment {
             @Override
             public void onClick(View view) {
                 Frag_musicList musicList =new Frag_musicList();
-                getActivity().getFragmentManager().beginTransaction().replace(R.id.fragmentLayout,musicList).commit();
+                instanciate(musicList,CentralActivity.getFT(getActivity()),true,true,R.id.fragmentLayout,"musicListDisplayed");
                 // TODO: 10/08/2017 mettre le petit gif en haut a coté du titre et faire disparaitre le chien eventuellement
             }
         });
