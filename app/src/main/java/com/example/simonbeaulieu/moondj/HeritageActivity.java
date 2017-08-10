@@ -40,11 +40,11 @@ public class HeritageActivity extends AppCompatActivity{
         DBHandler dbHandler= new DBHandler(this);
         //checkout des permissions
         reqPermissions();
-        try {
-            Thread.sleep(10000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            Thread.sleep(10000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
 
 
         //set up de la liste des musiques

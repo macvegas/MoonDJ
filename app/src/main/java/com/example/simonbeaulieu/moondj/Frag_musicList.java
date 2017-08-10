@@ -29,6 +29,7 @@ public class Frag_musicList extends Fragment{
         //displaying the list of musics
         Adapter_MusicList adapter = new Adapter_MusicList(getActivity().getApplicationContext(),liste_musiques);
         listView.setAdapter(adapter);
+        // TODO: 10/08/2017 arranger un onClick sur les items de la musicList 
 
         return view;
     }

@@ -40,28 +40,28 @@ public class Frag_menuPrincipal extends MainFragment {
             public void onClick(View view) {
                 Frag_musicList musicList =new Frag_musicList();
                 getActivity().getFragmentManager().beginTransaction().replace(R.id.fragmentLayout,musicList).commit();
-                System.out.println("fragmentbutton clicked");
+                // TODO: 10/08/2017 mettre le petit gif en haut a coté du titre et faire disparaitre le chien eventuellement
             }
         });
 
         randomMode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                // TODO: 10/08/2017 implementer onclick randomMode button
             }
         });
 
-        music.setOnClickListener(new View.OnClickListener() {
+        defaultMode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                // TODO: 10/08/2017 implementer onclick defaultmode button
             }
         });
 
         weightedMode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                // TODO: 10/08/2017 implementer onclick weightedmode button
             }
         });
     }
