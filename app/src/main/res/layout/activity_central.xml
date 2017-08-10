@@ -61,16 +61,4 @@
         android:layout_above="@id/music_bar"/>
 
 
-
-    <ImageView android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:id="@+id/imageView2"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:maxHeight="100dp"
-        android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
-        android:src="@drawable/moondog"
-        android:layout_above="@id/music_bar"/>
-
 </RelativeLayout>

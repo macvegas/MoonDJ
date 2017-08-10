@@ -1,5 +1,6 @@
 package com.example.simonbeaulieu.moondj;
 
+import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.Context;
 import android.os.Bundle;
@@ -47,11 +48,6 @@ public class CentralActivity extends HeritageActivity {
         }
     }
 
-    public static void hideDog(){
-        if(chien.getVisibility()!=View.INVISIBLE){
-            chien.setVisibility(View.INVISIBLE);
-        }
-    }
     public static void showDog(){
 
     }

@@ -37,10 +37,6 @@ public class Frag_menuPrincipal extends HeritageFragment {
         music.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ImageView dog = CentralActivity.chien;
-                if(dog.getVisibility()!=View.INVISIBLE){
-                    dog.setVisibility(View.INVISIBLE);
-                }
                 Frag_musicList musicList =new Frag_musicList();
                 instanciate(musicList,CentralActivity.getFT(getActivity()),true,true,R.id.fragmentLayout,"musicListDisplayed");
             }

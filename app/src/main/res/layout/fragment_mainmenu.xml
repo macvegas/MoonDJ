@@ -49,4 +49,16 @@
         android:layout_margin="20dp"
         android:layout_below="@id/deefaultmodebutton"
         android:textColor="#ffffff"/>
+
+    <ImageView android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:id="@+id/imageView2"
+
+        android:maxHeight="100dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/moondog"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"/>
 </RelativeLayout>
