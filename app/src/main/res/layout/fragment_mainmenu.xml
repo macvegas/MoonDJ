@@ -8,7 +8,7 @@
         android:id="@+id/MenuDescription"
         android:textAlignment="center"
         style="@style/TitleStyle"
-        android:text="MoonMoon gère ta musique !"/>
+        android:text="Moon Moon gère ta musique !"/>
 
     <Button android:background="@drawable/grandient_button"
         android:layout_height="wrap_content"
