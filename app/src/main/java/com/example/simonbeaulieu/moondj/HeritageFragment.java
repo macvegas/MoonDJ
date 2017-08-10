@@ -8,24 +8,12 @@ import android.app.FragmentTransaction;
  */
 
 public class HeritageFragment extends Fragment {
-    public static void instanciate(Fragment fragment, FragmentTransaction FT, boolean toCommit,boolean toAddToStack,int View_id,String backstackMessage){
-        FT.replace(View_id,fragment);
-        if(toAddToStack)
-            FT.addToBackStack(backstackMessage);
-        FT.replace(View_id,fragment);
+    public static void instanciate(Fragment fragment, FragmentTransaction FT, boolean toCommit,boolean toAddToStack,int View_id,String fragmentTag){
+        FT.replace(View_id,fragment,fragmentTag);
+        if(toAddToStack){
+            FT.addToBackStack(fragmentTag);
+        }
         if(toCommit)
             FT.commit();
     }
-
-    public static void instanciate(Fragment fragment, FragmentTransaction FT, boolean toCommit,boolean toAddToStack,int View_id){
-        FT.replace(View_id,fragment);
-        if(toAddToStack){
-            FT.addToBackStack("step added");
-        }
-        FT.replace(View_id,fragment);
-        if(toCommit){
-            FT.commit();
-        }
-    }
-
 }

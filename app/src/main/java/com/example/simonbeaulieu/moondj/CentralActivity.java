@@ -3,13 +3,18 @@ package com.example.simonbeaulieu.moondj;
 import android.app.FragmentTransaction;
 import android.content.Context;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 
 public class CentralActivity extends HeritageActivity {
 
+    static ImageView chien;
     public ImageView imageView;
+    FrameLayout frameLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,7 +23,7 @@ public class CentralActivity extends HeritageActivity {
         //mise en place du fragment principal
         FragmentTransaction ft=getFT(this);
         Frag_menuPrincipal fragMenuPrincipal = new Frag_menuPrincipal();
-        HeritageFragment.instanciate(fragMenuPrincipal,ft,true,false,R.id.fragmentLayout);
+        HeritageFragment.instanciate(fragMenuPrincipal,ft,true,false,R.id.fragmentLayout,"MAINMENU");
         setViews();
 
     }
@@ -27,6 +32,9 @@ public class CentralActivity extends HeritageActivity {
         //display du gif bloby
         imageView=(ImageView)findViewById(R.id.gif) ;
         Glide.with(this).load(R.drawable.loading).into(imageView);
+        //chien noir
+        chien=(ImageView)findViewById(R.id.imageView2);
+        frameLayout=(FrameLayout)findViewById(R.id.fragmentLayout);
     }
 
     @Override
@@ -37,6 +45,15 @@ public class CentralActivity extends HeritageActivity {
         }else{
             this.getFragmentManager().popBackStack();
         }
+    }
+
+    public static void hideDog(){
+        if(chien.getVisibility()!=View.INVISIBLE){
+            chien.setVisibility(View.INVISIBLE);
+        }
+    }
+    public static void showDog(){
+
     }
 
     public Context getContext(){

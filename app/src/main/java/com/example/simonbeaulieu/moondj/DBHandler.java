@@ -39,7 +39,7 @@ public class DBHandler extends SQLiteOpenHelper {
         + KEY_ARTISTE + " TEXT," + KEY_NOTATION + " TEXT " + ")";
         sqLiteDatabase.execSQL(CREATE_TABLE);
 //        close();
-            // TODO: 10/08/2017 rajouter une colonne temp pour revenir là ou on a laissé l'application (a la sortie de l'application par exemple)
+            // TODO: 10/08/2017 rajouter une colonne temp pour revenir là ou on a laissé l'application (a la sortie de l'app)
         }
 
         catch (SQLiteException e){
