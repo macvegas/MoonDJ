@@ -1,8 +1,5 @@
 package com.example.simonbeaulieu.moondj;
 
-import android.app.Fragment;
-import android.app.ListFragment;
-import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,7 +12,7 @@ import java.util.ArrayList;
  * Created by simon.beaulieu on 08/08/2017.
  */
 
-public class Frag_musicList extends MainFragment{
+public class Frag_musicList extends HeritageFragment {
     ListView listView;
     ArrayList<Song> liste_musiques ;
     @Override
