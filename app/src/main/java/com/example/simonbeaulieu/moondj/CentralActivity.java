@@ -20,7 +20,7 @@ public class CentralActivity extends HeritageActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_central);
-        // TODO: 13/08/17 mettre un listener sur le manager de fragment (backstacklistener) pour virer la barre de musique quand c'est le player et la remttre quand ca l'est pas 
+        // TODO: 13/08/17 mettre un listener sur le manager de fragment (backstacklistener) pour virer la barre de musique quand c'est le player et la remttre quand ca l'est pas
         //mise en place de la playbar
         FragmentTransaction bartransaction=getFT(this);
         Frag_musicBar frag_musicBar= new Frag_musicBar();
