@@ -1,5 +1,6 @@
 package com.example.simonbeaulieu.moondj;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -52,7 +53,8 @@ public class Frag_menuPrincipal extends HeritageFragment {
         defaultMode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // TODO: 10/08/2017 implementer onclick defaultmode button
+                Intent intent = new Intent(getActivity().getApplicationContext(),Activity_MusicPlayer.class);
+                startActivity(intent);
             }
         });
 
