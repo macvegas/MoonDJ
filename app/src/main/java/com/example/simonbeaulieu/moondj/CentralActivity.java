@@ -20,13 +20,21 @@ public class CentralActivity extends HeritageActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_central);
+        // TODO: 13/08/17 mettre un listener sur le manager de fragment (backstacklistener) pour virer la barre de musique quand c'est le player et la remttre quand ca l'est pas 
+        //mise en place de la playbar
+        FragmentTransaction bartransaction=getFT(this);
+        Frag_musicBar frag_musicBar= new Frag_musicBar();
+        HeritageFragment.instanciate(frag_musicBar,bartransaction,true,false,R.id.music_bar,"MUSICBAR");
 
         //mise en place du fragment principal
         FragmentTransaction ft=getFT(this);
         Frag_menuPrincipal fragMenuPrincipal = new Frag_menuPrincipal();
         HeritageFragment.instanciate(fragMenuPrincipal,ft,true,false,R.id.fragmentLayout,"MAINMENU");
+
+
         setViews();
 
+// TODO: 13/08/17 pour afficher les infos musiques dans la playbar il faut les mettres dans le frameLayout de CentralActivity parceque la playbar est utilisée par le MusicPlayer
     }
 
     public void setViews(){

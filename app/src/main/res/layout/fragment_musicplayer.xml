@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient_standard"
@@ -53,34 +54,13 @@
 
     </RelativeLayout>
 
-    <LinearLayout
+    <fragment
+        android:id="@+id/fragment_playbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal">
+        android:name="com.example.simonbeaulieu.moondj.Frag_musicBar"
+        tools:layout="@layout/fragment_playbar" />
 
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/previous1"
-            android:background="@null"
-            />
-
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/play1"
-            android:background="@null"
-            />
-
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/next1"
-            android:background="@null"
-
-            />
-
-    </LinearLayout>
 
 
 </LinearLayout>

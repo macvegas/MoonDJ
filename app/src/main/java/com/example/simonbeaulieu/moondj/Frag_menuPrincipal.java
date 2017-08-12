@@ -53,8 +53,8 @@ public class Frag_menuPrincipal extends HeritageFragment {
         defaultMode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity().getApplicationContext(),Activity_MusicPlayer.class);
-                startActivity(intent);
+                Frag_musicPlayer fragMusicPlayer=new Frag_musicPlayer();
+                instanciate(fragMusicPlayer,CentralActivity.getFT(getActivity()),true,true,R.id.fragmentLayout,"playerDisplayed");
             }
         });
 
