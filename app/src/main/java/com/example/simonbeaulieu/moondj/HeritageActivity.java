@@ -169,4 +169,6 @@ public class HeritageActivity extends AppCompatActivity{
     public static void echo(Object o){
         System.out.println(o);
     }
+
+
 }
