@@ -1,13 +1,10 @@
 package com.example.simonbeaulieu.moondj;
 
-import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 
 /**
  * Created by simon.beaulieu on 07/08/2017.
@@ -55,6 +52,8 @@ public class Frag_menuPrincipal extends HeritageFragment {
             public void onClick(View view) {
                 Frag_musicPlayer fragMusicPlayer=new Frag_musicPlayer();
                 instanciate(fragMusicPlayer,CentralActivity.getFT(getActivity()),true,true,R.id.fragmentLayout,"playerDisplayed");
+                CentralActivity activity =(CentralActivity) getActivity();
+                hideFragment(activity.getMusicbarFragment(),HeritageActivity.getFT(activity));
             }
         });
 

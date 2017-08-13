@@ -18,4 +18,10 @@ public class Frag_musicPlayer extends HeritageFragment{
         return view;
     }
 
+    @Override
+    public void onPause() {
+        CentralActivity activity = (CentralActivity)getActivity();
+        showFragment(activity.getMusicbarFragment(),HeritageActivity.getFT(activity));
+        super.onPause();
+    }
 }
