@@ -6,6 +6,7 @@ android:id="@+id/music_bar"
 android:padding="7dp"
 android:gravity="center"
     >
+
 <ImageButton
     android:id="@+id/previousButton"
     android:layout_width="wrap_content"
