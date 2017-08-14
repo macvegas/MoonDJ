@@ -1,19 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
 android:layout_width="match_parent"
 android:layout_height="wrap_content"
+    android:orientation="horizontal"
 android:id="@+id/music_bar"
 android:padding="7dp"
-android:gravity="center"
     >
 
-<ImageButton
-    android:id="@+id/previousButton"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:src="@drawable/previous1"
-    android:background="@null"
-    />
+
 
 <ImageButton
     android:id="@+id/playpauseButton"
@@ -21,13 +15,39 @@ android:gravity="center"
     android:layout_height="wrap_content"
     android:src="@drawable/play1"
     android:background="@null"
+    android:layout_centerHorizontal="true"
     />
 
+    <ImageButton
+        android:id="@+id/previousButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/previous1"
+        android:background="@null"
+        android:layout_toLeftOf="@id/playpauseButton"
+        android:layout_toStartOf="@id/playpauseButton"
+        />
+    
 <ImageButton
     android:id="@+id/nextButton"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:src="@drawable/next1"
     android:background="@null"
+    android:layout_toRightOf="@id/playpauseButton"
+    android:layout_toEndOf="@id/playpauseButton"
     />
-</LinearLayout>
+
+    <ImageButton
+        android:id="@+id/randomButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/random"
+        android:background="@null"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true" />
+</RelativeLayout>
