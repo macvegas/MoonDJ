@@ -11,7 +11,7 @@ import android.widget.ImageButton;
  */
 
 public class Frag_musicBar extends HeritageFragment{
-    ImageButton randomButton;
+    RandomButton randomButton;
     CentralActivity activity;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -32,16 +32,16 @@ public class Frag_musicBar extends HeritageFragment{
 
     private void linkViews(View view){
         activity=(CentralActivity)HeritageActivity.getCurrentActivityInstance();
-        randomButton=(ImageButton)view.findViewById(R.id.randomButton);
+        randomButton=view.findViewById(R.id.randomButton);
         randomButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(activity.randomIsActivated){
                     activity.randomIsActivated=false;
-                    randomButton.setImageResource(R.drawable.random_deactivated);
+                    randomButton.adaptState(false);
                 }else{
                     activity.randomIsActivated=true;
-                    randomButton.setImageResource(R.drawable.random);
+                    randomButton.adaptState(true);
                 }
             }
         });

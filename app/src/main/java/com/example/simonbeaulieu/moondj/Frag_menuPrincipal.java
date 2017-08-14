@@ -11,6 +11,7 @@ import android.widget.Button;
  */
 
 public class Frag_menuPrincipal extends HeritageFragment {
+    CentralActivity activity;
     Button defaultMode;
     Button randomMode;
     Button music;
@@ -26,6 +27,7 @@ public class Frag_menuPrincipal extends HeritageFragment {
     }
 
     public void setUi(View view){
+        activity=(CentralActivity)HeritageActivity.getCurrentActivityInstance();
         defaultMode=(Button)view.findViewById(R.id.deefaultmodebutton);
         randomMode=(Button)view.findViewById(R.id.randommodebutton);
         music=(Button)view.findViewById(R.id.musicstashbutton);

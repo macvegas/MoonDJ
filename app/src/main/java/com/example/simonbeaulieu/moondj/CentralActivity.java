@@ -62,7 +62,9 @@ public class CentralActivity extends HeritageActivity {
             super.onBackPressed();
         }else{
             this.getFragmentManager().popBackStack();
+            frag_musicBar.randomButton.adaptState(randomIsActivated);
         }
+
     }
 
     public Frag_musicBar getMusicbarFragment(){
