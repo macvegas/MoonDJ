@@ -20,7 +20,7 @@ public class Frag_musicPlayer extends HeritageFragment{
 
     @Override
     public void onDetach() {
-        CentralActivity activity = (CentralActivity)getActivity();
+        CentralActivity activity = (CentralActivity)HeritageActivity.getCurrentActivityInstance();
         showFragment(activity.getMusicbarFragment(),HeritageActivity.getFT(activity));
         super.onDetach();
     }

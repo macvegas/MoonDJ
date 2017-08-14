@@ -17,14 +17,17 @@ public class CentralActivity extends HeritageActivity {
     public ImageView imageView;
     FrameLayout frameLayout;
     Frag_musicBar frag_musicBar;
+    // TODO: 14/08/17 faire une variable booleene "isplaying" pour pas cancel l'application si la musique joue
+    public boolean randomIsActivated;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_central);
-        wrActivity=new WeakReference<HeritageActivity>(this);
-        setViews();
 
+
+
+        setViews();
         // TODO: 13/08/17 mettre un listener sur le manager de fragment (backstacklistener) pour virer la barre de musique quand c'est le player et la remttre quand ca l'est pas
         //mise en place de la playbar
         FragmentTransaction bartransaction=getFT(this);
@@ -42,7 +45,9 @@ public class CentralActivity extends HeritageActivity {
 // TODO: 13/08/17 pour afficher les infos musiques dans la playbar il faut les mettres dans le frameLayout de CentralActivity parceque la playbar est utilisée par le MusicPlayer
     }
 
-    public void setViews(){
+    private void setViews(){
+        wrActivity=new WeakReference<HeritageActivity>(this);
+        randomIsActivated=false;
         //display du gif bloby
         imageView=(ImageView)findViewById(R.id.gif) ;
         Glide.with(this).load(R.drawable.loading).into(imageView);
