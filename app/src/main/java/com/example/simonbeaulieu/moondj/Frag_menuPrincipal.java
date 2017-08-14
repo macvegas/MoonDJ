@@ -16,6 +16,7 @@ public class Frag_menuPrincipal extends HeritageFragment {
     Button randomMode;
     Button music;
     Button weightedMode;
+    Button playlists;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -32,6 +33,7 @@ public class Frag_menuPrincipal extends HeritageFragment {
         randomMode=(Button)view.findViewById(R.id.randommodebutton);
         music=(Button)view.findViewById(R.id.musicstashbutton);
         weightedMode=(Button)view.findViewById(R.id.weightedmodebutton);
+        playlists=(Button)view.findViewById(R.id.playlistbutton);
 
         //listeners
         music.setOnClickListener(new View.OnClickListener() {
@@ -66,6 +68,13 @@ public class Frag_menuPrincipal extends HeritageFragment {
             @Override
             public void onClick(View view) {
                 // TODO: 10/08/2017 implementer onclick weightedmode button
+            }
+        });
+
+        playlists.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // TODO: 10/08/2017 implementer onclick playlists button
             }
         });
     }
