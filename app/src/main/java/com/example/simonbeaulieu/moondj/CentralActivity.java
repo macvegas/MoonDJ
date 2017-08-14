@@ -60,10 +60,6 @@ public class CentralActivity extends HeritageActivity {
         }
     }
 
-    public static void showDog(){
-
-    }
-
     public Frag_musicBar getMusicbarFragment(){
         return frag_musicBar;
     }
