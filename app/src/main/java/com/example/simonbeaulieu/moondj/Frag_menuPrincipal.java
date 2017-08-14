@@ -43,7 +43,10 @@ public class Frag_menuPrincipal extends HeritageFragment {
         randomMode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // TODO: 10/08/2017 implementer onclick randomMode button
+                Frag_musicPlayer fragMusicPlayer=new Frag_musicPlayer();
+                instanciate(fragMusicPlayer,CentralActivity.getFT(getActivity()),true,true,R.id.fragmentLayout,"playerDisplayed");
+                CentralActivity activity =(CentralActivity) getActivity();
+                hideFragment(activity.getMusicbarFragment(),HeritageActivity.getFT(activity));
             }
         });
 

@@ -10,6 +10,8 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 
+import java.lang.ref.WeakReference;
+
 public class CentralActivity extends HeritageActivity {
 
     static ImageView chien;
@@ -21,6 +23,7 @@ public class CentralActivity extends HeritageActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_central);
+        wrActivity=new WeakReference<HeritageActivity>(this);
         setViews();
 
         // TODO: 13/08/17 mettre un listener sur le manager de fragment (backstacklistener) pour virer la barre de musique quand c'est le player et la remttre quand ca l'est pas

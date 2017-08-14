@@ -14,6 +14,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 import java.io.File;
+import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -32,6 +33,8 @@ public class HeritageActivity extends AppCompatActivity{
     final int READ_EXTERNAL_STORAGE_REQUESTINT =101;
     final int STORAGE_REQUESTINT =102;
     final int PHONE_STATE_REQUESTINT=103;
+    public static WeakReference<HeritageActivity> wrActivity= null;
+
 
 
     @Override
@@ -164,6 +167,16 @@ public class HeritageActivity extends AppCompatActivity{
                 break;
             }
         }
+    }
+
+    public static HeritageActivity getCurrentActivityInstance(){
+        return wrActivity.get();
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        wrActivity=new WeakReference<HeritageActivity>(this);
     }
 
     public static void echo(Object o){
