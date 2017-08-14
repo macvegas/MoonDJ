@@ -14,7 +14,6 @@ import java.lang.ref.WeakReference;
 
 public class CentralActivity extends HeritageActivity {
 
-    static ImageView chien;
     public ImageView imageView;
     FrameLayout frameLayout;
     Frag_musicBar frag_musicBar;
@@ -48,7 +47,6 @@ public class CentralActivity extends HeritageActivity {
         imageView=(ImageView)findViewById(R.id.gif) ;
         Glide.with(this).load(R.drawable.loading).into(imageView);
         //chien noir
-        chien=(ImageView)findViewById(R.id.imageView2);
         frameLayout=(FrameLayout)findViewById(R.id.fragmentLayout);
     }
 
