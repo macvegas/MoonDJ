@@ -27,7 +27,7 @@ android:padding="7dp"
         android:layout_toLeftOf="@id/playpauseButton"
         android:layout_toStartOf="@id/playpauseButton"
         />
-    
+
 <ImageButton
     android:id="@+id/nextButton"
     android:layout_width="wrap_content"
@@ -42,7 +42,6 @@ android:padding="7dp"
         android:id="@+id/randomButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/random"
         android:background="@null"
         android:layout_marginLeft="20dp"
         android:layout_marginStart="20dp"
