@@ -51,6 +51,7 @@ public class Frag_menuPrincipal extends HeritageFragment {
                 instanciate(fragMusicPlayer,CentralActivity.getFT(getActivity()),true,true,R.id.fragmentLayout,"playerDisplayed");
                 CentralActivity activity =(CentralActivity) getActivity();
                 hideFragment(activity.getMusicbarFragment(),HeritageActivity.getFT(activity));
+                // TODO: 15/08/17 rajouter le swapping de "random" si il est pas activé déja
             }
         });
 
@@ -74,7 +75,8 @@ public class Frag_menuPrincipal extends HeritageFragment {
         playlists.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // TODO: 10/08/2017 implementer onclick playlists button
+                Frag_playlists fragPlaylist= new Frag_playlists();
+                instanciate(fragPlaylist,CentralActivity.getFT(getActivity()),true,true,R.id.fragmentLayout,"playlistsDisplayed");
             }
         });
     }

@@ -16,6 +16,6 @@ public class Frag_playlists extends HeritageFragment {
         View view = inflater.inflate(R.layout.fragment_playlist,
                 container, false);
         return view;
-        // TODO: 15/08/17 faire le layout des playists 
+        // TODO: 15/08/17 faire le layout des playists
     }
 }

@@ -1,19 +1,14 @@
 package com.example.simonbeaulieu.moondj;
 
 import android.content.Context;
-import android.graphics.drawable.ColorDrawable;
-import android.support.annotation.LayoutRes;
-import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by simon.beaulieu on 08/08/2017.
@@ -21,7 +16,6 @@ import java.util.List;
 
 public class Adapter_MusicList extends ArrayAdapter {
 
-        //tweets est la liste des models à afficher
         public Adapter_MusicList(Context context, ArrayList<Song> songs) {
             super(context, 0, songs);
         }
@@ -30,7 +24,7 @@ public class Adapter_MusicList extends ArrayAdapter {
         public View getView(int position, View convertView, ViewGroup parent) {
 
             if(convertView == null){
-                convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_list,parent, false);
+                convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_musiclist,parent, false);
             }
 
             ViewHolder viewHolder = (ViewHolder) convertView.getTag();

@@ -6,11 +6,11 @@
 
     <color name="colorAccent">#FF4081</color>
 
-    <color name="PurpleBasic">#6b0096</color>
+    <color name="PurpleBasic">#4d238c</color>
 
     <color name="verylightpurple">#f2d3ff</color>
 
-    <color name="topbuttonblue">#a500ff</color>
+    <color name="topbuttonblue">#5016ff</color>
 
-    <color name="botbuttonblue">#d67fff</color>
+    <color name="botbuttonblue">#7b36a0</color>
 </resources>

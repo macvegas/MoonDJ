@@ -34,6 +34,7 @@ public class Song implements Serializable {
         this.notation= "";
     }
 
+    //constructeur avec tout
     public Song(int id,String path, String title, String artist,String notation){
         this.id=id;
         this.path = path;
