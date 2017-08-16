@@ -7,7 +7,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-
+import android.content.Intent;
+import android.content.ServiceConnection;
+import android.view.MenuItem;
+import android.os.IBinder;
+import android.content.ComponentName;
 import com.bumptech.glide.Glide;
 
 import java.lang.ref.WeakReference;
@@ -20,13 +24,15 @@ public class CentralActivity extends HeritageActivity {
     // TODO: 14/08/17 faire une variable booleene "isplaying" pour pas cancel l'application si la musique joue
     public boolean randomIsActivated;
 
+    //variables pour le service de musique
+    private MusicService musicSrv;
+    private Intent playIntent;
+    private boolean musicBound=false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_central);
-
-
-
         setViews();
         // TODO: 13/08/17 mettre un listener sur le manager de fragment (backstacklistener) pour virer la barre de musique quand c'est le player et la remttre quand ca l'est pas
         //mise en place de la playbar
@@ -38,11 +44,17 @@ public class CentralActivity extends HeritageActivity {
         FragmentTransaction ft=getFT(this);
         Frag_menuPrincipal fragMenuPrincipal = new Frag_menuPrincipal();
         HeritageFragment.instanciate(fragMenuPrincipal,ft,true,false,R.id.fragmentLayout,"MAINMENU");
+        // TODO: 13/08/17 pour afficher les infos musiques dans la playbar il faut les mettres dans le frameLayout de CentralActivity parceque la playbar est utilisée par le MusicPlayer
+    }
 
-
-
-
-// TODO: 13/08/17 pour afficher les infos musiques dans la playbar il faut les mettres dans le frameLayout de CentralActivity parceque la playbar est utilisée par le MusicPlayer
+    @Override
+    protected void onStart(){
+        super.onStart();
+        if (playIntent==null){
+            playIntent= new Intent(this,MusicService.class);
+            bindService(playIntent,musicConnection,Context.BIND_AUTO_CREATE);
+            startService(playIntent);
+        }
     }
 
     private void setViews(){
@@ -54,6 +66,24 @@ public class CentralActivity extends HeritageActivity {
         //chien noir
         frameLayout=(FrameLayout)findViewById(R.id.fragmentLayout);
     }
+
+    private ServiceConnection musicConnection = new ServiceConnection() {
+        @Override
+        public void onServiceConnected(ComponentName name, IBinder service) {
+            MusicService.MusicBinder binder = (MusicService.MusicBinder)service;
+            //get the service
+            musicSrv=binder.getService();
+            //pass list
+            musicSrv.setList(songArrayList);
+            musicBound=true;
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName componentName) {
+            musicBound=false;
+        }
+    };
+
 
     @Override
     public void onBackPressed() {
@@ -67,10 +97,15 @@ public class CentralActivity extends HeritageActivity {
 
     }
 
+    public MusicService getMusicSrv(){
+        return musicSrv;
+    }
     public Frag_musicBar getMusicbarFragment(){
         return frag_musicBar;
     }
     public Context getContext(){
         return this;
     }
+
+
 }

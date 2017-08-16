@@ -43,7 +43,6 @@ public class Adapter_MusicList extends ArrayAdapter {
             viewHolder.titre.setText(song.getTitle());
             viewHolder.artiste.setText(song.getArtist());
             viewHolder.notation.setText(song.getNotation());
-
             return convertView;
         }
 
