@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -24,10 +26,11 @@ public class Frag_playlists extends HeritageFragment {
         listView=(ListView)view.findViewById(R.id.listPlaylists);
         liste_playlists=new ArrayList<Playlist>();
         Playlist createItem=new Playlist("Create a Playlist");
+
         liste_playlists.add(createItem);
+
         Adapter_Playlists adapter_playlists=new Adapter_Playlists(getActivity().getApplicationContext(),liste_playlists);
         listView.setAdapter(adapter_playlists);
-
 
         return view;
         // TODO: 15/08/17 faire le layout des playists

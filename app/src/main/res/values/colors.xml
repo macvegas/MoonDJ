@@ -13,4 +13,8 @@
     <color name="topbuttonblue">#5016ff</color>
 
     <color name="botbuttonblue">#7b36a0</color>
+
+    <color name="greythemed">#756d7c</color>
+
+    <color name="lightgreythemed">#bba5d1</color>
 </resources>
