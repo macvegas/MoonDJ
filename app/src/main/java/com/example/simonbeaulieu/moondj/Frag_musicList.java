@@ -21,7 +21,7 @@ public class Frag_musicList extends HeritageFragment {
         View view = inflater.inflate(R.layout.fragment_musiclist,
                 container, false);
 
-        listView = (ListView)view.findViewById(R.id.music_list);
+        listView = view.findViewById(R.id.music_list);
         liste_musiques=HeritageActivity.songArrayList;
 
         //displaying the list of musics
