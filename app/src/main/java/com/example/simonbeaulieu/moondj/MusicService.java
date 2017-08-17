@@ -26,9 +26,10 @@ public class MusicService extends Service implements MediaPlayer.OnPreparedListe
     private int songPosn;
     //binder qui arrive sur le service et provenant de l'activité.
     private final IBinder musicBind = new MusicBinder();
-    //activité
+    //position de lecture
+    private int musicTimePosition;
 
-    
+
     public void onCreate(){
         //creates the service
         super.onCreate();
@@ -100,9 +101,8 @@ public class MusicService extends Service implements MediaPlayer.OnPreparedListe
         songPosn=songIndex;
     }
 
+    //plays the selected song
     public void playSong(){
-
-        //play a song
         player.reset();
         //get the song
         Song playSong = songs.get(songPosn);
@@ -116,5 +116,22 @@ public class MusicService extends Service implements MediaPlayer.OnPreparedListe
         player.prepareAsync();
     }
 
-    
+    public void pauseSong(){
+        player.pause();
+    }
+
+    public void resumeSong(){
+        player.start();
+    }
+
+    public void toNextSong(){
+        // TODO: 18/08/17 faire le cas random, auquel on joint le cas "isplaying"
+    }
+
+    public void toPreviousSong(){
+
+        // TODO: 18/08/17 faire le previous en réfléchissant a comment jouer la musique précédente en random (faire une liste des musiques a mesure qu'on les joues?)
+    }
+
+
 }
