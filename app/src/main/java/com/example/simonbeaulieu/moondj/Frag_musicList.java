@@ -17,12 +17,15 @@ import java.util.ArrayList;
 public class Frag_musicList extends HeritageFragment {
     ListView listView;
     ArrayList<Song> liste_musiques ;
+    CentralActivity activity;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_musiclist,
                 container, false);
 
+        activity=(CentralActivity)HeritageActivity.getCurrentActivityInstance();
         listView = view.findViewById(R.id.music_list);
         liste_musiques=HeritageActivity.songArrayList;
 
@@ -35,6 +38,8 @@ public class Frag_musicList extends HeritageFragment {
                 Song song = (Song)adapterView.getItemAtPosition(position);
                 Toast toast = Toast.makeText(HeritageActivity.getCurrentActivityInstance().getApplicationContext(),song.getTitle(),Toast.LENGTH_SHORT);
                 toast.show();
+                activity.getMusicSrv().setSong(position);
+                activity.getMusicSrv().playSong();
             }
         });
         // TODO: 10/08/2017 arranger un onClick sur les items de la musicList

@@ -102,10 +102,10 @@ public class MusicService extends Service implements MediaPlayer.OnPreparedListe
         player.reset();
         //get the song
         Song playSong = songs.get(songPosn);
-        long currSong =playSong.getId();
-        Uri trackUri=ContentUris.withAppendedId(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,currSong);
+//        long currSong =playSong.getId();
+//        Uri trackUri=ContentUris.withAppendedId(MediaStore.Audio.Media.EXTERNAL_CONTENT_URI,currSong);
         try{
-            player.setDataSource(getApplicationContext(),trackUri);
+            player.setDataSource(playSong.getPath());
         }catch (Exception e){
             Log.e("MUSIC SERVICE","Error setting data source",e);
         }

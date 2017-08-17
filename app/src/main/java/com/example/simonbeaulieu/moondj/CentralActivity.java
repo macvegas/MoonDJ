@@ -12,6 +12,8 @@ import android.content.ServiceConnection;
 import android.view.MenuItem;
 import android.os.IBinder;
 import android.content.ComponentName;
+import android.widget.Toast;
+
 import com.bumptech.glide.Glide;
 
 import java.lang.ref.WeakReference;
@@ -28,6 +30,25 @@ public class CentralActivity extends HeritageActivity {
     private MusicService musicSrv;
     private Intent playIntent;
     private boolean musicBound=false;
+
+    private ServiceConnection musicConnection = new ServiceConnection() {
+        @Override
+        public void onServiceConnected(ComponentName name, IBinder service) {
+            MusicService.MusicBinder binder = (MusicService.MusicBinder)service;
+            //get the service
+            musicSrv=binder.getService();
+//            Toast toast = Toast.makeText(HeritageActivity.getCurrentActivityInstance().getApplicationContext(),musicSrv.toString(),Toast.LENGTH_SHORT);
+//            toast.show();
+            //pass list
+            musicSrv.setList(songArrayList);
+            musicBound=true;
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName componentName) {
+            musicBound=false;
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +72,8 @@ public class CentralActivity extends HeritageActivity {
     protected void onStart(){
         super.onStart();
         if (playIntent==null){
+            System.out.println("onseviceconnected activé");
+
             playIntent= new Intent(this,MusicService.class);
             bindService(playIntent,musicConnection,Context.BIND_AUTO_CREATE);
             startService(playIntent);
@@ -67,22 +90,7 @@ public class CentralActivity extends HeritageActivity {
         frameLayout=(FrameLayout)findViewById(R.id.fragmentLayout);
     }
 
-    private ServiceConnection musicConnection = new ServiceConnection() {
-        @Override
-        public void onServiceConnected(ComponentName name, IBinder service) {
-            MusicService.MusicBinder binder = (MusicService.MusicBinder)service;
-            //get the service
-            musicSrv=binder.getService();
-            //pass list
-            musicSrv.setList(songArrayList);
-            musicBound=true;
-        }
 
-        @Override
-        public void onServiceDisconnected(ComponentName componentName) {
-            musicBound=false;
-        }
-    };
 
 
     @Override
@@ -108,4 +116,10 @@ public class CentralActivity extends HeritageActivity {
     }
 
 
+    @Override
+    public void onDestroy(){
+        stopService(playIntent);
+        musicSrv=null;
+        super.onDestroy();
+    }
 }
