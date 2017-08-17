@@ -48,7 +48,7 @@ public class Adapter_Playlists extends ArrayAdapter {
             viewHolder.optionButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    
+
                 }
             });
         }else{
