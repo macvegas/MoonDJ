@@ -26,6 +26,8 @@ public class MusicService extends Service implements MediaPlayer.OnPreparedListe
     private int songPosn;
     //binder qui arrive sur le service et provenant de l'activité.
     private final IBinder musicBind = new MusicBinder();
+    //activité
+
     
     public void onCreate(){
         //creates the service
@@ -67,6 +69,7 @@ public class MusicService extends Service implements MediaPlayer.OnPreparedListe
     @Override
     public void onCompletion(MediaPlayer mediaPlayer) {
 
+        // TODO: 17/08/17 on completion : avec random activated et tout ca
     }
 
     @Override
@@ -98,6 +101,7 @@ public class MusicService extends Service implements MediaPlayer.OnPreparedListe
     }
 
     public void playSong(){
+
         //play a song
         player.reset();
         //get the song
