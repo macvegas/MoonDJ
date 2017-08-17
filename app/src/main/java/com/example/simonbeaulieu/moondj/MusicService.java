@@ -83,11 +83,6 @@ public class MusicService extends Service implements MediaPlayer.OnPreparedListe
         mp.start();
     }
 
-    //selector of the song (to be called when user select a song)
-    public void setSong(int songIndex){
-        songPosn=songIndex;
-    }
-
     //setting method for the music list
     public void setList(ArrayList<Song> songs) {
         this.songs = songs;
@@ -98,6 +93,11 @@ public class MusicService extends Service implements MediaPlayer.OnPreparedListe
         MusicService getService(){
             return MusicService.this;
         }
+    }
+
+    //selector of the song (to be called when user select a song)
+    public void setSong(int songIndex){
+        songPosn=songIndex;
     }
 
     public void playSong(){
@@ -115,4 +115,6 @@ public class MusicService extends Service implements MediaPlayer.OnPreparedListe
         }
         player.prepareAsync();
     }
+
+    
 }
