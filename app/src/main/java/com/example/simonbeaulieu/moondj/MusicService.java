@@ -78,8 +78,7 @@ public class MusicService extends Service implements MediaPlayer.OnPreparedListe
 
     @Override
     public void onCompletion(MediaPlayer mediaPlayer) {
-
-        // TODO: 17/08/17 on completion : avec random activated et tout ca
+        toNextSong();
     }
 
     @Override
