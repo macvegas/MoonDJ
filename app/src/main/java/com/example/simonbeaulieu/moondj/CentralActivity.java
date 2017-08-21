@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 
 import java.lang.ref.WeakReference;
+import java.util.Collections;
 
 public class CentralActivity extends HeritageActivity {
 

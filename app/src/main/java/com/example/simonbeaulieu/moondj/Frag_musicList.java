@@ -36,13 +36,12 @@ public class Frag_musicList extends HeritageFragment {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 Song song = (Song)adapterView.getItemAtPosition(position);
-                Toast toast = Toast.makeText(HeritageActivity.getCurrentActivityInstance().getApplicationContext(),song.getTitle(),Toast.LENGTH_SHORT);
-                toast.show();
+//                Toast toast = Toast.makeText(HeritageActivity.getCurrentActivityInstance().getApplicationContext(),song.getTitle(),Toast.LENGTH_SHORT);
+//                toast.show();
                 activity.getMusicSrv().setSong(position);
-                activity.getMusicSrv().playSong();
+                activity.getMusicSrv().playLinearSong();
             }
         });
-        // TODO: 10/08/2017 arranger un onClick sur les items de la musicList
 
         return view;
     }
