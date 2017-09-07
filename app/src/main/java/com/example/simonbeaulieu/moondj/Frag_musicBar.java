@@ -58,10 +58,10 @@ public class Frag_musicBar extends HeritageFragment{
             public void onClick(View view) {
                 if (activity.getMusicSrv().getIsPlaying()){
                     activity.getMusicSrv().pauseSong();
-                    playpauseButton.setImageResource(R.drawable.play1);
+                    adaptplaybuttonstate();
                 }else{
                     activity.getMusicSrv().resumeSong();
-                    playpauseButton.setImageResource(R.drawable.pause1);
+                    adaptplaybuttonstate();
                 }
             }
         });
@@ -79,5 +79,13 @@ public class Frag_musicBar extends HeritageFragment{
                 activity.getMusicSrv().toPreviousSong();
             }
         });
+    }
+
+    public void adaptplaybuttonstate(){
+       if(activity.getMusicSrv().getIsPlaying()){
+           playpauseButton.setImageResource(R.drawable.pause1);
+       }else {
+           playpauseButton.setImageResource(R.drawable.play1);
+       }
     }
 }
