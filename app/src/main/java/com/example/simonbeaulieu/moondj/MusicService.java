@@ -12,13 +12,14 @@ import android.media.AudioManager;
 import android.os.Binder;
 import android.os.PowerManager;
 import android.util.Log;
+import android.widget.SeekBar;
 import android.widget.Toast;
 
 /**
  * Created by vegas on 16/08/17.
  */
 
-public class MusicService extends Service implements MediaPlayer.OnPreparedListener, MediaPlayer.OnErrorListener, MediaPlayer.OnCompletionListener {
+public class MusicService extends Service implements MediaPlayer.OnPreparedListener, MediaPlayer.OnErrorListener, MediaPlayer.OnCompletionListener, SeekBar.OnSeekBarChangeListener {
     //media player
     private MediaPlayer player;
     //song list
@@ -110,6 +111,20 @@ public class MusicService extends Service implements MediaPlayer.OnPreparedListe
         shuffle();
     }
 
+    @Override
+    public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+
+    }
+
+    @Override
+    public void onStartTrackingTouch(SeekBar seekBar) {
+
+    }
+
+    @Override
+    public void onStopTrackingTouch(SeekBar seekBar) {
+
+    }
 
 
     //class that will allow the interaction between the activity and the service
@@ -243,6 +258,9 @@ public class MusicService extends Service implements MediaPlayer.OnPreparedListe
     }
     
 
+    public MediaPlayer getMediaPlayer(){
+        return player;
+    }
 
 
 

@@ -12,6 +12,7 @@ import android.content.ServiceConnection;
 import android.view.MenuItem;
 import android.os.IBinder;
 import android.content.ComponentName;
+import android.widget.SeekBar;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
@@ -24,7 +25,7 @@ public class CentralActivity extends HeritageActivity {
     public ImageView imageView;
     FrameLayout frameLayout;
     Frag_musicBar frag_musicBar;
-    // TODO: 14/08/17 faire une variable booleene "isplaying" pour pas cancel l'application si la musique joue
+    
     public boolean randomIsActivated;
 
     //variables pour le service de musique
@@ -56,7 +57,6 @@ public class CentralActivity extends HeritageActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_central);
         setViews();
-        // TODO: 13/08/17 mettre un listener sur le manager de fragment (backstacklistener) pour virer la barre de musique quand c'est le player et la remttre quand ca l'est pas
         //mise en place de la playbar
         FragmentTransaction bartransaction=getFT(this);
         frag_musicBar= new Frag_musicBar();
