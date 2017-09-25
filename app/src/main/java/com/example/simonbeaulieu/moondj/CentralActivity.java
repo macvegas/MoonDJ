@@ -103,7 +103,7 @@ public class CentralActivity extends HeritageActivity {
             if(this.getMusicSrv().getIsPlaying()){
                 // sort un toast et revient au menu
                 Toast toast=new Toast(this);
-                toast.setText("in order to leave, please stop the music");
+                toast.makeText(this,"in order to leave, please stop the music",Toast.LENGTH_LONG).show();
 
                 Intent startMain = new Intent(Intent.ACTION_MAIN);
                 startMain.addCategory(Intent.CATEGORY_HOME);
