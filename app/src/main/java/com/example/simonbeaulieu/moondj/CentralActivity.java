@@ -25,7 +25,7 @@ public class CentralActivity extends HeritageActivity {
     public ImageView imageView;
     FrameLayout frameLayout;
     Frag_musicBar frag_musicBar;
-    
+
     public boolean randomIsActivated;
 
     //variables pour le service de musique
@@ -97,8 +97,22 @@ public class CentralActivity extends HeritageActivity {
     @Override
     public void onBackPressed() {
         int usedfragmentCount=this.getFragmentManager().getBackStackEntryCount();
+        // si on est sur le menu principal
         if (usedfragmentCount==0){
-            super.onBackPressed();
+            //si la musique est en cours de lecture
+            if(this.getMusicSrv().getIsPlaying()){
+                // sort un toast et revient au menu
+                Toast toast=new Toast(this);
+                toast.setText("in order to leave, please stop the music");
+
+                Intent startMain = new Intent(Intent.ACTION_MAIN);
+                startMain.addCategory(Intent.CATEGORY_HOME);
+                startMain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(startMain);
+            }else{
+                super.onBackPressed();
+            }
+
         }else{
             this.getFragmentManager().popBackStack();
             frag_musicBar.randomButton.adaptState(randomIsActivated);
