@@ -51,6 +51,7 @@ public class Frag_menuPrincipal extends HeritageFragment {
                 instanciate(fragMusicPlayer,CentralActivity.getFT(getActivity()),true,true,R.id.fragmentLayout,"playerDisplayed");
                 CentralActivity activity =(CentralActivity) getActivity();
                 hideFragment(activity.getMusicbarFragment(),HeritageActivity.getFT(activity));
+                fragMusicPlayer.updateMusicInfo();
                 // TODO: 15/08/17 rajouter le swapping de "random" si il est pas activé déja
             }
         });
@@ -62,6 +63,7 @@ public class Frag_menuPrincipal extends HeritageFragment {
                 instanciate(fragMusicPlayer,CentralActivity.getFT(getActivity()),true,true,R.id.fragmentLayout,"playerDisplayed");
                 CentralActivity activity =(CentralActivity) getActivity();
                 hideFragment(activity.getMusicbarFragment(),HeritageActivity.getFT(activity));
+                fragMusicPlayer.updateMusicInfo();
             }
         });
 
