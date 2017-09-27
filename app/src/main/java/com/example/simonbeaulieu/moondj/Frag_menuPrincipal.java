@@ -47,7 +47,7 @@ public class Frag_menuPrincipal extends HeritageFragment {
         randomMode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Frag_musicPlayer fragMusicPlayer=new Frag_musicPlayer();
+                Frag_musicPlayer fragMusicPlayer=activity.fragMusicPlayer;   //new Frag_musicPlayer();
                 instanciate(fragMusicPlayer,CentralActivity.getFT(getActivity()),true,true,R.id.fragmentLayout,"playerDisplayed");
                 CentralActivity activity =(CentralActivity) getActivity();
                 hideFragment(activity.getMusicbarFragment(),HeritageActivity.getFT(activity));
@@ -58,7 +58,7 @@ public class Frag_menuPrincipal extends HeritageFragment {
         defaultMode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Frag_musicPlayer fragMusicPlayer=new Frag_musicPlayer();
+                Frag_musicPlayer fragMusicPlayer=activity.fragMusicPlayer;
                 instanciate(fragMusicPlayer,CentralActivity.getFT(getActivity()),true,true,R.id.fragmentLayout,"playerDisplayed");
                 CentralActivity activity =(CentralActivity) getActivity();
                 hideFragment(activity.getMusicbarFragment(),HeritageActivity.getFT(activity));

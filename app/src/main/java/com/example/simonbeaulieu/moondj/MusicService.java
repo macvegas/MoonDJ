@@ -233,6 +233,7 @@ public class MusicService extends Service implements MediaPlayer.OnPreparedListe
                 playLinearSong();
             }
         }
+        centralActivity.fragMusicPlayer.updateMusicInfo();
     }
 
     public void toPreviousSong(){
@@ -255,6 +256,7 @@ public class MusicService extends Service implements MediaPlayer.OnPreparedListe
                 playLinearSong();
             }
         }
+        centralActivity.fragMusicPlayer.updateMusicInfo();
     }
     
 

@@ -25,6 +25,7 @@ public class CentralActivity extends HeritageActivity {
     public ImageView imageView;
     FrameLayout frameLayout;
     Frag_musicBar frag_musicBar;
+    public Frag_musicPlayer fragMusicPlayer;
 
     public boolean randomIsActivated;
 
@@ -89,6 +90,8 @@ public class CentralActivity extends HeritageActivity {
         Glide.with(this).load(R.drawable.loading).into(imageView);
         //chien noir
         frameLayout=(FrameLayout)findViewById(R.id.fragmentLayout);
+        fragMusicPlayer=new Frag_musicPlayer();
+
     }
 
 
