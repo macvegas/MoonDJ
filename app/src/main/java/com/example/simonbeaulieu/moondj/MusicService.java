@@ -74,7 +74,7 @@ public class MusicService extends Service implements MediaPlayer.OnPreparedListe
     }
 
     @Override
-    public boolean onUnbind(Intent intent) {// TODO: 16/08/17 This will execute when the user exits the app, at which point we will stop the service. 
+    public boolean onUnbind(Intent intent) {
         player.stop();
         player.release();
         return false;
@@ -331,7 +331,7 @@ public class MusicService extends Service implements MediaPlayer.OnPreparedListe
 //                songPosn=previousSong.getId();
 //                setSong(songPosn);
 //            }else{
-//                //si on a pas d'historique et que le random est activé on récupère une musique random // TODO: 18/08/17 problème: si on revient en arrière et qu'on joue, ca fout dans la liste des musiques jouées
+//                //si on a pas d'historique et que le random est activé on récupère une musique random
 //                if(centralActivity.randomIsActivated){
 //                    Random r=new Random();
 //                    int random=r.nextInt(songs.size());
