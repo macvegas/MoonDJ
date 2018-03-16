@@ -37,12 +37,8 @@ public class Frag_musicPlayer extends HeritageFragment{
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_musicplayer,
                 container, false);
-
         linkviews(view);
-
         randomButton.adaptState(activity.randomIsActivated);
-
-
         return view;
     }
 
@@ -66,9 +62,39 @@ public class Frag_musicPlayer extends HeritageFragment{
         progressBar=view.findViewById(R.id.playingseekbar);
         progressBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
-            public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 //todo coder les methodes pour mettre a jour la seekbar
+                /*i have solved it. Create a thread that will check the song position every second and move the seekbar based on the song position
+                  mediaPos = mplayer.getCurrentPosition();
+  mediaMax = mplayer.getDuration();
 
+  seekbar.setMax(mediaMax); // Set the Maximum range of the
+  seekbar.setProgress(mediaPos);// set current progress to song's
+
+  handler.removeCallbacks(moveSeekBarThread);
+  handler.postDelayed(moveSeekBarThread, 100); //cal the thread after 100 milliseconds
+
+
+}
+
+  The Move seek bar. Thread to move seekbar based on the current position
+  of the song
+
+                private Runnable moveSeekBarThread = new Runnable() {
+                    public void run() {
+                        if(mplayer.isPlaying()){
+
+                            int mediaPos_new = mPlayer.getCurrentPosition();
+                            int mediaMax_new = mPlayer.getDuration();
+                            seekbar.setMax(mediaMax_new);
+                            seekbar.setProgress(mediaPos_new);
+
+                            handler.postDelayed(this, 100); //Looping the thread after 0.1 second
+                        }
+
+                    }
+                };
+                 */
             }
 
             @Override
